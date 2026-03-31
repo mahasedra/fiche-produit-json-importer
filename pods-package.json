@@ -1,0 +1,164 @@
+{
+    "@meta": {
+        "version": "3.3.8",
+        "build": 1774877378
+    },
+    "settings": {
+        "types_only": "0",
+        "watch_changed_fields": "0",
+        "metadata_integration": "0",
+        "metadata_override_get": "0",
+        "register_meta_integration": "0",
+        "media_modal_fields": "0",
+        "autocomplete_limit": "15",
+        "session_auto_start": "0",
+        "dynamic_features_allow": "1",
+        "dynamic_features_enabled": [
+            "display",
+            "form"
+        ],
+        "show_access_restricted_messages": "0",
+        "show_access_admin_notices": "1",
+        "dynamic_features_allow_sql_clauses": "0",
+        "display_callbacks": "customized",
+        "display_callbacks_allowed": "esc_attr,esc_html",
+        "wisdom_opt_out": "1",
+        "active_components": [
+            "migrate-packages",
+            "templates"
+        ]
+    },
+    "pods": [
+        {
+            "name": "fiche_produit",
+            "label": "Fiches produits",
+            "type": "post_type",
+            "public": "1",
+            "show_ui": "1",
+            "publicly_queryable": "1",
+            "supports_title": "1",
+            "supports_editor": "1",
+            "supports_thumbnail": "1",
+            "built_in_taxonomies_marque": "1",
+            "built_in_taxonomies_style": "1",
+            "built_in_taxonomies_type_de_produit": "1",
+            "built_in_taxonomies_gamme_de_prix": "1",
+            "groups": [
+                {
+                    "name": "fiche_produit_contenu",
+                    "label": "Fiche produit – contenu",
+                    "fields": [
+                        {
+                            "name": "badge",
+                            "type": "text"
+                        },
+                        {
+                            "name": "titre_principal",
+                            "type": "text"
+                        },
+                        {
+                            "name": "prix_affiche",
+                            "type": "text"
+                        },
+                        {
+                            "name": "image_alt",
+                            "type": "text"
+                        },
+                        {
+                            "name": "lien_amazon",
+                            "type": "website"
+                        },
+                        {
+                            "name": "lien_retour_guide",
+                            "type": "website"
+                        },
+                        {
+                            "name": "avis_stella",
+                            "type": "paragraph"
+                        },
+                        {
+                            "name": "avantages",
+                            "type": "text",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "inconvenients",
+                            "type": "text",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "titre_revue_detail",
+                            "type": "text"
+                        },
+                        {
+                            "name": "intro_detaillee",
+                            "type": "wysiwyg"
+                        },
+                        {
+                            "name": "mention_affiliation",
+                            "type": "paragraph"
+                        },
+                        {
+                            "name": "points_forts",
+                            "type": "text",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "contenu_design",
+                            "type": "wysiwyg"
+                        },
+                        {
+                            "name": "contenu_rangement",
+                            "type": "wysiwyg"
+                        },
+                        {
+                            "name": "contenu_miroir",
+                            "type": "wysiwyg"
+                        },
+                        {
+                            "name": "contenu_connectique",
+                            "type": "wysiwyg"
+                        },
+                        {
+                            "name": "caracteristiques",
+                            "type": "paragraph",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "contenu_colis",
+                            "type": "text",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "raisons_choix",
+                            "type": "paragraph",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "synthese_avis",
+                            "type": "paragraph"
+                        },
+                        {
+                            "name": "avis_points",
+                            "type": "text",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "point_vigilance",
+                            "type": "paragraph"
+                        },
+                        {
+                            "name": "public_cible",
+                            "type": "text",
+                            "repeatable": "1"
+                        },
+                        {
+                            "name": "conclusion",
+                            "type": "wysiwyg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

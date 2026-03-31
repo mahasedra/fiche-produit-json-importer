@@ -1,0 +1,268 @@
+[
+  {
+    "post_title": "Coiffeuse LED Blanche Moderne",
+    "badge": "Best Seller",
+    "titre_principal": "Coiffeuse avec miroir LED 3 couleurs",
+    "prix_affiche": "149€",
+    "image": "https://picsum.photos/600?random=1",
+    "image_alt": "Coiffeuse LED blanche moderne",
+    "lien_amazon": "https://amazon.fr/test1",
+    "lien_retour_guide": "/guide-coiffeuse",
+    "avis_stella": "Excellent rapport qualité/prix pour une utilisation quotidienne.",
+
+    "avantages": [
+      "Design moderne",
+      "Éclairage LED puissant",
+      "Facile à nettoyer"
+    ],
+    "inconvenients": [
+      "Montage long",
+      "Notice moyenne"
+    ],
+
+    "titre_revue_detail": "Analyse complète de la coiffeuse LED",
+    "intro_detaillee": "<p>Cette coiffeuse offre un excellent compromis entre design et fonctionnalité.</p>",
+    "mention_affiliation": "Ce contenu contient des liens affiliés.",
+
+    "points_forts": [
+      "Qualité",
+      "Design",
+      "Fonctionnalité"
+    ],
+
+    "contenu_design": "<p>Design épuré et moderne adapté à tous les intérieurs.</p>",
+    "contenu_rangement": "<p>Plusieurs tiroirs permettent un rangement optimal.</p>",
+    "contenu_miroir": "<p>Miroir LED réglable en intensité.</p>",
+    "contenu_connectique": "<p>Port USB intégré pratique.</p>",
+
+    "caracteristiques": [
+      { "nom": "Dimensions", "valeur": "80x40x140 cm" },
+      { "nom": "Poids", "valeur": "25 kg" }
+    ],
+
+    "contenu_colis": [
+      "Table",
+      "Miroir",
+      "Visserie",
+      "Notice"
+    ],
+
+    "raisons_choix": [
+      {
+        "titre": "Idéal petit espace",
+        "description": "Compact et pratique"
+      },
+      {
+        "titre": "Design moderne",
+        "description": "S’intègre facilement"
+      }
+    ],
+
+    "synthese_avis": "Les clientes apprécient le design et la luminosité.",
+    "avis_points": [
+      "Facile à utiliser",
+      "Bon éclairage",
+      "Esthétique"
+    ],
+
+    "point_vigilance": "Prévoir du temps pour le montage.",
+    "public_cible": [
+      "Adolescentes",
+      "Adultes"
+    ],
+
+    "conclusion": "<p>Une excellente coiffeuse pour un usage quotidien.</p>",
+
+    "marque": ["IKEA"],
+    "style": ["Moderne"],
+    "type_de_produit": ["Coiffeuse"],
+    "gamme_de_prix": ["Moyen"]
+  },
+
+  {
+    "post_title": "Coiffeuse Scandinave Bois Clair",
+    "badge": "Premium",
+    "titre_principal": "Coiffeuse style nordique minimaliste",
+    "prix_affiche": "199€",
+    "image": "https://picsum.photos/600?random=2",
+    "image_alt": "Coiffeuse bois clair",
+    "lien_amazon": "https://amazon.fr/test2",
+    "lien_retour_guide": "/guide-coiffeuse",
+    "avis_stella": "Produit haut de gamme avec finition parfaite.",
+
+    "avantages": [
+      "Bois massif",
+      "Très stable",
+      "Style élégant"
+    ],
+    "inconvenients": [
+      "Prix élevé",
+      "Pas de LED"
+    ],
+
+    "titre_revue_detail": "Coiffeuse premium en bois",
+    "intro_detaillee": "<p>Idéale pour les amateurs de décoration nordique.</p>",
+    "mention_affiliation": "Lien affilié Amazon.",
+
+    "points_forts": [
+      "Robustesse",
+      "Esthétique"
+    ],
+
+    "contenu_design": "<p>Style scandinave minimaliste.</p>",
+    "contenu_rangement": "<p>Rangements larges.</p>",
+    "contenu_miroir": "<p>Miroir classique.</p>",
+    "contenu_connectique": "<p>Aucune connectique.</p>",
+
+    "caracteristiques": [
+      { "nom": "Matériau", "valeur": "Bois massif" },
+      { "nom": "Couleur", "valeur": "Chêne clair" }
+    ],
+
+    "contenu_colis": [
+      "Table",
+      "Miroir"
+    ],
+
+    "raisons_choix": [
+      {
+        "titre": "Design nordique",
+        "description": "Parfait pour déco moderne"
+      }
+    ],
+
+    "synthese_avis": "Très bons retours sur la qualité.",
+    "avis_points": [
+      "Solide",
+      "Design"
+    ],
+
+    "point_vigilance": "Prix élevé.",
+    "public_cible": [
+      "Adultes",
+      "Décorateurs"
+    ],
+
+    "conclusion": "<p>Excellent investissement.</p>",
+
+    "marque": ["Maisons du Monde"],
+    "style": ["Scandinave"],
+    "type_de_produit": ["Coiffeuse"],
+    "gamme_de_prix": ["Élevé"]
+  },
+
+  {
+    "post_title": "Coiffeuse Compacte Blanche",
+    "badge": "Petit espace",
+    "titre_principal": "Mini coiffeuse gain de place",
+    "prix_affiche": "89€",
+    "image": "https://picsum.photos/600?random=3",
+    "image_alt": "Coiffeuse compacte",
+    "lien_amazon": "https://amazon.fr/test3",
+    "avis_stella": "Parfaite pour les petits espaces.",
+
+    "avantages": ["Compacte", "Légère"],
+    "inconvenients": ["Peu de rangement"],
+
+    "titre_revue_detail": "Coiffeuse compacte",
+    "intro_detaillee": "<p>Idéale studio.</p>",
+
+    "points_forts": ["Gain de place"],
+
+    "contenu_design": "<p>Minimaliste</p>",
+    "contenu_rangement": "<p>Peu de tiroirs</p>",
+    "contenu_miroir": "<p>Miroir simple</p>",
+
+    "caracteristiques": [
+      { "nom": "Largeur", "valeur": "60 cm" }
+    ],
+
+    "contenu_colis": ["Table"],
+
+    "raisons_choix": [
+      { "titre": "Petit espace", "description": "Très compacte" }
+    ],
+
+    "synthese_avis": "Bonne solution économique.",
+    "avis_points": ["Prix"],
+    "point_vigilance": "Peu de rangement",
+    "public_cible": ["Étudiants"],
+    "conclusion": "<p>Bon choix entrée de gamme.</p>"
+  },
+
+  {
+    "post_title": "Coiffeuse Moderne Noire",
+    "badge": "Tendance",
+    "titre_principal": "Coiffeuse noire design",
+    "prix_affiche": "139€",
+    "image": "https://picsum.photos/600?random=4",
+    "image_alt": "Coiffeuse noire",
+    "lien_amazon": "https://amazon.fr/test4",
+    "avis_stella": "Très esthétique.",
+
+    "avantages": ["Design chic"],
+    "inconvenients": ["Trace facilement"],
+
+    "titre_revue_detail": "Coiffeuse design",
+    "intro_detaillee": "<p>Look moderne.</p>",
+
+    "points_forts": ["Esthétique"],
+
+    "contenu_design": "<p>Noir brillant</p>",
+    "contenu_rangement": "<p>Standard</p>",
+
+    "caracteristiques": [
+      { "nom": "Couleur", "valeur": "Noir" }
+    ],
+
+    "contenu_colis": ["Table"],
+
+    "raisons_choix": [
+      { "titre": "Design", "description": "Très moderne" }
+    ],
+
+    "synthese_avis": "Bon design.",
+    "avis_points": ["Look"],
+    "point_vigilance": "Rayures",
+    "public_cible": ["Adultes"],
+    "conclusion": "<p>Bon produit.</p>"
+  },
+
+  {
+    "post_title": "Coiffeuse Luxe LED Premium",
+    "badge": "Haut de gamme",
+    "titre_principal": "Coiffeuse LED luxe",
+    "prix_affiche": "249€",
+    "image": "https://picsum.photos/600?random=5",
+    "image_alt": "Coiffeuse luxe",
+    "lien_amazon": "https://amazon.fr/test5",
+    "avis_stella": "Produit premium.",
+
+    "avantages": ["Très robuste", "LED réglable"],
+    "inconvenients": ["Prix élevé"],
+
+    "titre_revue_detail": "Coiffeuse luxe",
+    "intro_detaillee": "<p>Haut de gamme.</p>",
+
+    "points_forts": ["Qualité"],
+
+    "contenu_design": "<p>Premium</p>",
+    "contenu_rangement": "<p>Large</p>",
+
+    "caracteristiques": [
+      { "nom": "Qualité", "valeur": "Premium" }
+    ],
+
+    "contenu_colis": ["Table"],
+
+    "raisons_choix": [
+      { "titre": "Qualité", "description": "Durable" }
+    ],
+
+    "synthese_avis": "Très bon produit.",
+    "avis_points": ["Qualité"],
+    "point_vigilance": "Prix",
+    "public_cible": ["Professionnels"],
+    "conclusion": "<p>Excellent choix premium.</p>"
+  }
+]
