@@ -29,12 +29,10 @@ function fp_json_import_page() {
 
         $json = '';
 
-        // 1. Si textarea
         if (!empty($_POST['json_data'])) {
             $json = stripslashes($_POST['json_data']);
         }
 
-        // 2. Si fichier upload
         if (!empty($_FILES['json_file']['tmp_name'])) {
             $json = file_get_contents($_FILES['json_file']['tmp_name']);
         }
@@ -92,7 +90,7 @@ function fp_json_import_page() {
                 }
             }
 
-            // Caracteristiques (transform object -> string)
+            // Caracteristiques (HTML auto)
             if (!empty($item['caracteristiques'])) {
                 $formatted = [];
 
@@ -105,7 +103,7 @@ function fp_json_import_page() {
                 update_post_meta($post_id, 'caracteristiques', $formatted);
             }
 
-            // Raisons choix (transform object -> string)
+            // Raisons choix (HTML auto)
             if (!empty($item['raisons_choix'])) {
                 $formatted = [];
 
@@ -118,7 +116,7 @@ function fp_json_import_page() {
                 update_post_meta($post_id, 'raisons_choix', $formatted);
             }
 
-            // IMAGE (featured image FIX)
+            // IMAGE (featured)
             if (!empty($item['image'])) {
                 $image_id = fp_import_image($item['image'], $post_id);
                 if ($image_id) {
@@ -140,7 +138,7 @@ function fp_json_import_page() {
     }
 }
 
-// Fonction image FIABLE
+// IMAGE FIX
 function fp_import_image($url, $post_id) {
 
     $tmp = download_url($url);
@@ -161,3 +159,74 @@ function fp_import_image($url, $post_id) {
 
     return $id;
 }
+
+//////////////////////////////////////////////////
+// SHORTCODES ELEMENTOR
+//////////////////////////////////////////////////
+
+// CARACTERISTIQUES
+add_shortcode('fiche_caracteristiques', function() {
+
+    global $post;
+    if (!$post) return '';
+
+    $items = get_post_meta($post->ID, 'caracteristiques', true);
+    if (empty($items)) return '';
+
+    ob_start();
+    ?>
+
+    <ul class="fp-list">
+        <?php foreach ($items as $item) : ?>
+            <li>✔ <?php echo wp_kses_post($item); ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <?php
+    return ob_get_clean();
+});
+
+// RAISONS
+add_shortcode('fiche_raisons', function() {
+
+    global $post;
+    if (!$post) return '';
+
+    $items = get_post_meta($post->ID, 'raisons_choix', true);
+    if (empty($items)) return '';
+
+    ob_start();
+    ?>
+
+    <ul class="fp-list">
+        <?php foreach ($items as $item) : ?>
+            <li>⭐ <?php echo wp_kses_post($item); ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <?php
+    return ob_get_clean();
+});
+add_action('wp_head', function() {
+    ?>
+    <style>
+    .fp-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .fp-list li {
+        padding: 10px 12px;
+        margin-bottom: 6px;
+        background: #fafafa;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .fp-list strong {
+        font-weight: 600;
+    }
+    </style>
+    <?php
+});
