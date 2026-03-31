@@ -1,7 +1,7 @@
 {
     "@meta": {
         "version": "3.3.8",
-        "build": 1774877378
+        "build": 1774935086
     },
     "settings": {
         "types_only": "0",
@@ -30,133 +30,481 @@
     },
     "pods": [
         {
+            "name": "etiquette",
+            "id": 246,
+            "label": "\u00c9tiquettes produit Pods",
+            "description": "",
+            "type": "taxonomy",
+            "storage": "meta",
+            "label_singular": "\u00c9tiquette produit Pods",
+            "public": "1",
+            "show_ui": "1",
+            "hierarchical": "1",
+            "publicly_queryable": "0",
+            "dynamic_features_allow": "inherit",
+            "rest_enable": "1",
+            "_migrated_28": "0",
+            "built_in_post_types_produit": "1",
+            "built_in_post_types_fiche_produit": "1",
+            "groups": [
+                {
+                    "name": "plus_de_champs",
+                    "id": 247,
+                    "label": "Plus de champs",
+                    "description": "",
+                    "weight": 0,
+                    "fields": []
+                }
+            ]
+        },
+        {
             "name": "fiche_produit",
+            "id": 450,
             "label": "Fiches produits",
+            "description": "",
             "type": "post_type",
+            "storage": "meta",
+            "label_singular": "Fiche Produit",
             "public": "1",
             "show_ui": "1",
             "publicly_queryable": "1",
+            "dynamic_features_allow": "inherit",
+            "rest_enable": "1",
             "supports_title": "1",
             "supports_editor": "1",
-            "supports_thumbnail": "1",
+            "_migrated_28": "1",
+            "built_in_taxonomies_etiquette": "1",
+            "built_in_taxonomies_gamme_de_prix": "1",
             "built_in_taxonomies_marque": "1",
             "built_in_taxonomies_style": "1",
             "built_in_taxonomies_type_de_produit": "1",
-            "built_in_taxonomies_gamme_de_prix": "1",
+            "supports_thumbnail": "1",
+            "supports_quick_edit": "1",
             "groups": [
                 {
                     "name": "fiche_produit_contenu",
-                    "label": "Fiche produit – contenu",
+                    "id": 457,
+                    "label": "Fiche produit \u2013 contenu",
+                    "description": "",
+                    "weight": 0,
                     "fields": [
                         {
                             "name": "badge",
+                            "id": 458,
+                            "label": "Badge",
+                            "description": "",
+                            "weight": 0,
                             "type": "text"
                         },
                         {
                             "name": "titre_principal",
+                            "id": 459,
+                            "label": "Titre principal",
+                            "description": "",
+                            "weight": 1,
                             "type": "text"
                         },
                         {
                             "name": "prix_affiche",
+                            "id": 460,
+                            "label": "Prix affich\u00e9",
+                            "description": "",
+                            "weight": 2,
                             "type": "text"
                         },
                         {
                             "name": "image_alt",
+                            "id": 462,
+                            "label": "Texte alternatif image",
+                            "description": "",
+                            "weight": 3,
                             "type": "text"
                         },
                         {
                             "name": "lien_amazon",
+                            "id": 463,
+                            "label": "Lien Amazon",
+                            "description": "",
+                            "weight": 4,
                             "type": "website"
                         },
                         {
                             "name": "lien_retour_guide",
+                            "id": 464,
+                            "label": "Lien retour guide",
+                            "description": "",
+                            "weight": 5,
                             "type": "website"
                         },
                         {
                             "name": "avis_stella",
+                            "id": 465,
+                            "label": "L'avis de Stella",
+                            "description": "",
+                            "weight": 6,
                             "type": "paragraph"
                         },
                         {
                             "name": "avantages",
+                            "id": 466,
+                            "label": "Avantages",
+                            "description": "",
+                            "weight": 7,
                             "type": "text",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "text_allowed_html_tags": "strong em a ul ol li b i",
+                            "text_max_length": "255",
+                            "repeatable_format": "ul",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0"
                         },
                         {
                             "name": "inconvenients",
+                            "id": 467,
+                            "label": "Inconv\u00e9nients",
+                            "description": "",
+                            "weight": 8,
                             "type": "text",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "text_allowed_html_tags": "strong em a ul ol li b i",
+                            "text_max_length": "255",
+                            "repeatable_format": "ul",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0"
                         },
                         {
                             "name": "titre_revue_detail",
+                            "id": 468,
+                            "label": "Titre revue d\u00e9taill\u00e9e",
+                            "description": "",
+                            "weight": 9,
                             "type": "text"
                         },
                         {
                             "name": "intro_detaillee",
+                            "id": 469,
+                            "label": "Introduction d\u00e9taill\u00e9e",
+                            "description": "",
+                            "weight": 10,
                             "type": "wysiwyg"
                         },
                         {
                             "name": "mention_affiliation",
+                            "id": 470,
+                            "label": "Mention affiliation",
+                            "description": "",
+                            "weight": 11,
                             "type": "paragraph"
                         },
                         {
                             "name": "points_forts",
-                            "type": "text",
-                            "repeatable": "1"
+                            "id": 471,
+                            "label": "Points forts",
+                            "description": "",
+                            "weight": 12,
+                            "type": "paragraph",
+                            "repeatable": "1",
+                            "paragraph_allowed_html_tags": "strong em a ul ol li b i",
+                            "paragraph_max_length": "-1",
+                            "repeatable_format": "default",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0"
                         },
                         {
                             "name": "contenu_design",
+                            "id": 472,
+                            "label": "Section design",
+                            "description": "",
+                            "weight": 13,
                             "type": "wysiwyg"
                         },
                         {
                             "name": "contenu_rangement",
+                            "id": 473,
+                            "label": "Section rangement",
+                            "description": "",
+                            "weight": 14,
                             "type": "wysiwyg"
                         },
                         {
                             "name": "contenu_miroir",
+                            "id": 474,
+                            "label": "Section miroir",
+                            "description": "",
+                            "weight": 15,
                             "type": "wysiwyg"
                         },
                         {
                             "name": "contenu_connectique",
+                            "id": 475,
+                            "label": "Section connectique",
+                            "description": "",
+                            "weight": 16,
                             "type": "wysiwyg"
                         },
                         {
                             "name": "caracteristiques",
+                            "id": 498,
+                            "label": "caracteristiques",
+                            "description": "",
+                            "weight": 17,
                             "type": "paragraph",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "repeatable_format": "default",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0",
+                            "paragraph_allowed_html_tags": "strong em a ul ol li b i",
+                            "paragraph_max_length": "-1"
                         },
                         {
                             "name": "contenu_colis",
+                            "id": 478,
+                            "label": "Contenu du colis",
+                            "description": "",
+                            "weight": 18,
                             "type": "text",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "text_allowed_html_tags": "strong em a ul ol li b i",
+                            "text_max_length": "255",
+                            "repeatable_format": "ul",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0"
                         },
                         {
                             "name": "raisons_choix",
+                            "id": 499,
+                            "label": "raisons_choix",
+                            "description": "",
+                            "weight": 19,
                             "type": "paragraph",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "repeatable_format": "default",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0",
+                            "paragraph_allowed_html_tags": "strong em a ul ol li b i",
+                            "paragraph_max_length": "-1"
                         },
                         {
                             "name": "synthese_avis",
+                            "id": 481,
+                            "label": "Synth\u00e8se des avis",
+                            "description": "",
+                            "weight": 20,
                             "type": "paragraph"
                         },
                         {
                             "name": "avis_points",
+                            "id": 482,
+                            "label": "Points positifs",
+                            "description": "",
+                            "weight": 21,
                             "type": "text",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "text_allowed_html_tags": "strong em a ul ol li b i",
+                            "text_max_length": "255",
+                            "repeatable_format": "ul",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0"
                         },
                         {
                             "name": "point_vigilance",
+                            "id": 483,
+                            "label": "Point de vigilance",
+                            "description": "",
+                            "weight": 22,
                             "type": "paragraph"
                         },
                         {
                             "name": "public_cible",
+                            "id": 484,
+                            "label": "Public cible",
+                            "description": "",
+                            "weight": 23,
                             "type": "text",
-                            "repeatable": "1"
+                            "repeatable": "1",
+                            "text_allowed_html_tags": "strong em a ul ol li b i",
+                            "text_max_length": "255",
+                            "repeatable_format": "ul",
+                            "default_evaluate_tags": "0",
+                            "default_empty_fields": "0",
+                            "roles_allowed": "administrator",
+                            "revisions_revision_field": "0",
+                            "enable_conditional_logic": "0",
+                            "conditional_logic_save_value": "0",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1",
+                            "required": "0"
                         },
                         {
                             "name": "conclusion",
+                            "id": 485,
+                            "label": "Conclusion",
+                            "description": "",
+                            "weight": 24,
                             "type": "wysiwyg"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "gamme_de_prix",
+            "id": 386,
+            "label": "Gammes de prix Pods",
+            "description": "",
+            "type": "taxonomy",
+            "storage": "meta",
+            "label_singular": "Gamme de prix Pods",
+            "public": "1",
+            "show_ui": "1",
+            "hierarchical": "1",
+            "publicly_queryable": "0",
+            "dynamic_features_allow": "inherit",
+            "rest_enable": "1",
+            "_migrated_28": "0",
+            "built_in_post_types_fiche_produit": "1",
+            "built_in_post_types_produit": "0",
+            "groups": [
+                {
+                    "name": "plus_de_champs",
+                    "id": 387,
+                    "label": "Plus de champs",
+                    "description": "",
+                    "weight": 0,
+                    "fields": []
+                }
+            ]
+        },
+        {
+            "name": "marque",
+            "id": 380,
+            "label": "Marques Pods",
+            "description": "",
+            "type": "taxonomy",
+            "storage": "meta",
+            "label_singular": "Marque Pods",
+            "public": "1",
+            "show_ui": "1",
+            "hierarchical": "1",
+            "publicly_queryable": "0",
+            "dynamic_features_allow": "inherit",
+            "rest_enable": "1",
+            "_migrated_28": "0",
+            "built_in_post_types_fiche_produit": "1",
+            "built_in_post_types_produit": "0",
+            "groups": [
+                {
+                    "name": "plus_de_champs",
+                    "id": 381,
+                    "label": "Plus de champs",
+                    "description": "",
+                    "weight": 0,
+                    "fields": []
+                }
+            ]
+        },
+        {
+            "name": "style",
+            "id": 384,
+            "label": "Styles Pods",
+            "description": "",
+            "type": "taxonomy",
+            "storage": "meta",
+            "label_singular": "Style Pods",
+            "public": "1",
+            "show_ui": "1",
+            "hierarchical": "1",
+            "publicly_queryable": "0",
+            "dynamic_features_allow": "inherit",
+            "rest_enable": "1",
+            "_migrated_28": "0",
+            "built_in_post_types_fiche_produit": "1",
+            "built_in_post_types_produit": "0",
+            "groups": [
+                {
+                    "name": "plus_de_champs",
+                    "id": 385,
+                    "label": "Plus de champs",
+                    "description": "",
+                    "weight": 0,
+                    "fields": []
+                }
+            ]
+        },
+        {
+            "name": "type_de_produit",
+            "id": 382,
+            "label": "Types de produits Pods",
+            "description": "",
+            "type": "taxonomy",
+            "storage": "meta",
+            "label_singular": "Type de produit Pods",
+            "public": "1",
+            "show_ui": "1",
+            "hierarchical": "1",
+            "publicly_queryable": "0",
+            "dynamic_features_allow": "inherit",
+            "rest_enable": "1",
+            "_migrated_28": "0",
+            "built_in_post_types_fiche_produit": "1",
+            "built_in_post_types_produit": "0",
+            "groups": [
+                {
+                    "name": "plus_de_champs",
+                    "id": 383,
+                    "label": "Plus de champs",
+                    "description": "",
+                    "weight": 0,
+                    "fields": []
                 }
             ]
         }
