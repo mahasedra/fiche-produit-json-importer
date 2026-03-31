@@ -7,7 +7,8 @@ add_action('admin_menu', function () {
     add_menu_page('Import JSON Produits', 'Import JSON Fiches Produits', 'manage_options', 'fp-json-import', 'fp_json_import_page');
 });
 
-function fp_json_import_page() {
+function fp_json_import_page()
+{
     ?>
     <div class="wrap">
         <h1>Importer fiches produits (JSON)</h1>
@@ -61,15 +62,28 @@ function fp_json_import_page() {
                 'post_status' => 'publish'
             ]);
 
-            if (!$post_id) continue;
+            if (!$post_id)
+                continue;
 
             // Champs simples
             $fields = [
-                'badge','titre_principal','prix_affiche','image_alt',
-                'lien_amazon','lien_retour_guide','avis_stella',
-                'titre_revue_detail','intro_detaillee','mention_affiliation',
-                'contenu_design','contenu_rangement','contenu_miroir',
-                'contenu_connectique','synthese_avis','point_vigilance','conclusion'
+                'badge',
+                'titre_principal',
+                'prix_affiche',
+                'image_alt',
+                'lien_amazon',
+                'lien_retour_guide',
+                'avis_stella',
+                'titre_revue_detail',
+                'intro_detaillee',
+                'mention_affiliation',
+                'contenu_design',
+                'contenu_rangement',
+                'contenu_miroir',
+                'contenu_connectique',
+                'synthese_avis',
+                'point_vigilance',
+                'conclusion'
             ];
 
             foreach ($fields as $field) {
@@ -80,8 +94,12 @@ function fp_json_import_page() {
 
             // Repeatables simples
             $repeatables = [
-                'avantages','inconvenients','points_forts',
-                'contenu_colis','avis_points','public_cible'
+                'avantages',
+                'inconvenients',
+                'points_forts',
+                'contenu_colis',
+                'avis_points',
+                'public_cible'
             ];
 
             foreach ($repeatables as $field) {
@@ -125,7 +143,7 @@ function fp_json_import_page() {
             }
 
             // Taxonomies
-            $taxonomies = ['marque','style','type_de_produit','gamme_de_prix'];
+            $taxonomies = ['marque', 'style', 'type_de_produit', 'gamme_de_prix'];
 
             foreach ($taxonomies as $tax) {
                 if (!empty($item[$tax])) {
@@ -139,25 +157,61 @@ function fp_json_import_page() {
 }
 
 // IMAGE FIX
-function fp_import_image($url, $post_id) {
+function fp_import_image($url, $post_id)
+{
 
-    $tmp = download_url($url);
+    if (empty($url))
+        return false;
 
-    if (is_wp_error($tmp)) return false;
+    // Nettoyage URL
+    $url = esc_url_raw($url);
 
-    $file_array = [
-        'name' => basename($url),
-        'tmp_name' => $tmp
-    ];
+    // Téléchargement
+    $response = wp_remote_get($url);
 
-    $id = media_handle_sideload($file_array, $post_id);
-
-    if (is_wp_error($id)) {
-        @unlink($tmp);
+    if (is_wp_error($response)) {
+        error_log('Erreur téléchargement image');
         return false;
     }
 
-    return $id;
+    $body = wp_remote_retrieve_body($response);
+
+    if (empty($body)) {
+        error_log('Image vide');
+        return false;
+    }
+
+    // Nom fichier propre
+    $filename = basename(parse_url($url, PHP_URL_PATH));
+    if (!$filename) {
+        $filename = 'image-' . time() . '.jpg';
+    }
+
+    // Upload
+    $upload = wp_upload_bits($filename, null, $body);
+
+    if ($upload['error']) {
+        error_log('Erreur upload');
+        return false;
+    }
+
+    // Création attachment
+    $wp_filetype = wp_check_filetype($upload['file']);
+
+    $attachment = [
+        'post_mime_type' => $wp_filetype['type'],
+        'post_title' => sanitize_file_name($filename),
+        'post_status' => 'inherit'
+    ];
+
+    $attach_id = wp_insert_attachment($attachment, $upload['file'], $post_id);
+
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+    $attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
+    wp_update_attachment_metadata($attach_id, $attach_data);
+
+    return $attach_id;
 }
 
 //////////////////////////////////////////////////
@@ -165,19 +219,21 @@ function fp_import_image($url, $post_id) {
 //////////////////////////////////////////////////
 
 // CARACTERISTIQUES
-add_shortcode('fiche_caracteristiques', function() {
+add_shortcode('fiche_caracteristiques', function () {
 
     global $post;
-    if (!$post) return '';
+    if (!$post)
+        return '';
 
     $items = get_post_meta($post->ID, 'caracteristiques', true);
-    if (empty($items)) return '';
+    if (empty($items))
+        return '';
 
     ob_start();
     ?>
 
     <ul class="fp-list">
-        <?php foreach ($items as $item) : ?>
+        <?php foreach ($items as $item): ?>
             <li>✔ <?php echo wp_kses_post($item); ?></li>
         <?php endforeach; ?>
     </ul>
@@ -187,19 +243,21 @@ add_shortcode('fiche_caracteristiques', function() {
 });
 
 // RAISONS
-add_shortcode('fiche_raisons', function() {
+add_shortcode('fiche_raisons', function () {
 
     global $post;
-    if (!$post) return '';
+    if (!$post)
+        return '';
 
     $items = get_post_meta($post->ID, 'raisons_choix', true);
-    if (empty($items)) return '';
+    if (empty($items))
+        return '';
 
     ob_start();
     ?>
 
     <ul class="fp-list">
-        <?php foreach ($items as $item) : ?>
+        <?php foreach ($items as $item): ?>
             <li>⭐ <?php echo wp_kses_post($item); ?></li>
         <?php endforeach; ?>
     </ul>
@@ -207,26 +265,26 @@ add_shortcode('fiche_raisons', function() {
     <?php
     return ob_get_clean();
 });
-add_action('wp_head', function() {
+add_action('wp_head', function () {
     ?>
     <style>
-    .fp-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+        .fp-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .fp-list li {
-        padding: 10px 12px;
-        margin-bottom: 6px;
-        background: #fafafa;
-        border-radius: 8px;
-        font-size: 14px;
-    }
+        .fp-list li {
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            background: #fafafa;
+            border-radius: 8px;
+            font-size: 14px;
+        }
 
-    .fp-list strong {
-        font-weight: 600;
-    }
+        .fp-list strong {
+            font-weight: 600;
+        }
     </style>
     <?php
 });
