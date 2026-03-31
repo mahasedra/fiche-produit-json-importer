@@ -7,6 +7,8 @@ add_action('admin_menu', function () {
     add_menu_page('Import JSON Produits', 'Import JSON Fiches Produits', 'manage_options', 'fp-json-import', 'fp_json_import_page');
 });
 
+require_once plugin_dir_path(__FILE__) . 'shortcode-template-full.php';
+
 function fp_json_import_page()
 {
     ?>
