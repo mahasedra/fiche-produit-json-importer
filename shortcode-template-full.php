@@ -60,7 +60,7 @@ add_shortcode('fiche_produit_full', function () {
     $public_cible = (array) get_post_meta($post->ID, 'public_cible', true);
 
     // ===== CONCLUSION =====
-    $titre_conclusion = get_post_meta($post->ID, 'titre_conclusion', true) ?: '🎯 Notre Verdict';
+    $titre_conclusion = get_post_meta($post->ID, 'titre_conclusion', true) ?: 'Conclusion';
     $conclusion = get_post_meta($post->ID, 'conclusion', true);
 
     // ===== CTA =====
@@ -183,8 +183,8 @@ add_shortcode('fiche_produit_full', function () {
 
         .fp-hero-image {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
             display: block;
             object-fit: cover;
         }
@@ -341,8 +341,8 @@ add_shortcode('fiche_produit_full', function () {
         }
 
         .fp-btn-primary {
-            background: var(--primary);
-            color: white;
+            background: var( --e-global-color-secondary );
+            color: white !important;
         }
 
         .fp-btn-primary:hover {
@@ -452,7 +452,11 @@ add_shortcode('fiche_produit_full', function () {
             color: var(--text-primary);
             margin: 0.5rem 0;
         }
-
+        .fp-reason p strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+            }
         .fp-reason p {
             font-size: 0.9rem;
             margin: 0;
@@ -532,8 +536,8 @@ add_shortcode('fiche_produit_full', function () {
 
         /* ==================== SECTION INTRO ==================== */
         .fp-section-intro {
-            background: var(--bg-accent-light);
-            border-left: 4px solid var(--accent);
+            background: var(--bg-success-light);
+            border-left: 4px solid var(--success);
             padding: 1.5rem;
             border-radius: 8px;
             margin: 2rem 0;
@@ -543,28 +547,54 @@ add_shortcode('fiche_produit_full', function () {
             margin: 0;
             font-size: 1rem;
         }
+        
+        .fp-public-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .fp-public-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        /* Le ">" */
+        .fp-public-list li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #9ca3af;
+            font-weight: bold;
+        }
 
         /* ==================== CONCLUSION ==================== */
         .fp-conclusion {
             margin: 3rem 0;
-            background: var(--accent);
-            color: white;
+            background: var(--bg-danger-light);
+            color: var(--text-muted);
             padding: 2.5rem;
             border-radius: 16px;
+            border: 1px solid var(--warning);
             box-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
         }
 
         .fp-conclusion h2 {
-            color: white;
+            color: var(--text-muted);
             margin-top: 0;
         }
 
         .fp-conclusion p {
-            color: rgba(255,255,255,0.95);
+            color: var(--text-muted);
         }
 
         .fp-conclusion a {
-            color: white;
+            color: var(--text-muted);
             font-weight: 600;
             text-decoration: underline;
         }
@@ -662,7 +692,7 @@ add_shortcode('fiche_produit_full', function () {
         <!-- HERO SECTION -->
         <div class="fp-hero">
             <div>
-                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($titre); ?>" class="fp-hero-image">
+                <img class="fp-hero-image" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($titre); ?>" class="fp-hero-image">
             </div>
 
             <div class="fp-hero-content">
@@ -796,7 +826,7 @@ add_shortcode('fiche_produit_full', function () {
                         <div class="fp-reason">
                             <div class="fp-reason-number">0<?php echo $idx + 1; ?></div>
                             <h4><?php echo esc_html($titre_raison); ?></h4>
-                            <p><?php echo esc_html($desc_raison); ?></p>
+                            <p><?php echo wp_kses($desc_raison, ['strong' => []]); ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -866,9 +896,9 @@ add_shortcode('fiche_produit_full', function () {
 
         <!-- PUBLIC CIBLE SECTION -->
         <?php if (!empty($public_cible)): ?>
-            <div>
+            <div class="fp-public">
                 <h2>👥 Public concerné</h2>
-                <ul>
+                <ul class="fp-public-list">
                     <?php foreach ($public_cible as $item): ?>
                         <li><?php echo esc_html($item); ?></li>
                     <?php endforeach; ?>
